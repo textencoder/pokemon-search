@@ -89,13 +89,13 @@ function getPokemon(input) {
 }
 
 searchBtn.addEventListener("click", () => {
-  getPokemon(inputField.value.trim());
+  getPokemon(inputField.value.trim().toLowerCase());
   inputField.value = "";
 });
 
 inputField.addEventListener("keydown", (e) => {
   if (e.key == "Enter" || e.key == 13) {
-    getPokemon(inputField.value.trim());
+    getPokemon(inputField.value.trim().toLowerCase());
     inputField.value = "";
   }
 });
