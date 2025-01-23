@@ -27,8 +27,11 @@ function getPokemon(input) {
       return response.json();
     })
     .then((data) => {
+        let matchFound = false;
+
       for (let pokemon of data.results) {
-        if (input == pokemon.name) {
+        if (input == pokemon.name || input == pokemon.id) {
+            matchFound = true;
           fetch(pokemon.url)
             .then((response) => {
               if (!response.ok) {
@@ -70,19 +73,29 @@ function getPokemon(input) {
               document.querySelector("img").src = data.sprites["front_default"];
               document.querySelector("img").style.display = "block";
             });
+
+            break;
         }
       } 
-    });
+
+      if (!matchFound) {
+        alert("Pokémon not found");
+      }
+
+    })
+    .catch((error) => {
+        console.error("Error:", error);
+      });
 }
 
 searchBtn.addEventListener("click", () => {
-  getPokemon(inputField.value);
+  getPokemon(inputField.value.trim());
   inputField.value = "";
 });
 
 inputField.addEventListener("keydown", (e) => {
   if (e.key == "Enter" || e.key == 13) {
-    getPokemon(inputField.value);
+    getPokemon(inputField.value.trim());
     inputField.value = "";
   }
 });
