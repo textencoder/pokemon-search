@@ -5,6 +5,7 @@ const pokemonName = document.getElementById("pokemon-name");
 const pokemonId = document.getElementById("pokemon-id");
 const weight = document.getElementById("weight");
 const height = document.getElementById("height");
+const moves = document.getElementById("moves");
 const types = document.getElementById("types");
 const hp = document.getElementById("hp");
 const attack = document.getElementById("attack");
