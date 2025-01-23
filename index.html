@@ -1,32 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="styles.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gotta Catch Em All!</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="search-area">
-        <input type="text" id="search-input">
-    
-        <button id="search-button" type="submit">search</button>
+      <input type="text" id="search-input" />
+
+      <button id="search-button" type="submit">search</button>
     </div>
 
     <div id="poke-info">
-    <p id="pokemon-name"></p>
-    <p id="pokemon-id"></p>
-    <p id="weight"></p>
-<p id="height"></p>
-<p id="types"></p>
-<p id="hp"></p>
-<p id="attack"></p>
-<p id="special-attack"></p>
-<p id="special-defense"></p>
-<p id="speed"></p>
+
+        <div id="header">
+      <p id="pokemon-name"></p>
+      <p id="pokemon-id"></p>
+    </div>
+
+    <div id="visual">
+      <p id="types"></p>
+      <img src="" alt="pokemon sprite">
+    </div>
+
+      <div id="attributes">
+      <p id="weight"></p>
+      <p id="height"></p>
+    </div>
+
+    <div id="stats">
+      <p id="hp"></p>
+      <p id="attack"></p>
+      <p id="defense"></p>
+      <p id="special-attack"></p>
+      <p id="special-defense"></p>
+      <p id="speed"></p>
+    </div>
+
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
