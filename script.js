@@ -19,6 +19,7 @@ const speed = document.getElementById("speed");
 // })
 
 function getPokemon(input) {
+  //initial api fetch
   fetch("https://pokeapi-proxy.freecodecamp.rocks/api/pokemon")
     .then((response) => {
       if (!response.ok) {
@@ -31,7 +32,10 @@ function getPokemon(input) {
 
       for (let pokemon of data.results) {
         if (input == pokemon.name || input == pokemon.id) {
+          //set flag to true
             matchFound = true;
+
+          //begin fetch sequence
           fetch(pokemon.url)
             .then((response) => {
               if (!response.ok) {
@@ -42,7 +46,7 @@ function getPokemon(input) {
             .then((data) => {
               //consider refactoring into loop
               pokemonName.innerText = data.name.toUpperCase();
-              pokemonId.innerText = data.id;
+              pokemonId.innerText = `#${data.id}`;
               weight.innerText = data.weight;
               height.innerText = data.height;
               
