@@ -209,8 +209,21 @@ body {
   font-style: normal;
 }
 
+.poppins-medium {
+  font-family: "Poppins", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
 .poppins-light {
   font-family: "Poppins", serif;
   font-weight: 300;
   font-style: normal;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    height: 90%;
+    width: 375px;
+  }
 }
