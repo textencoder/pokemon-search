@@ -63,6 +63,9 @@ function getPokemon(input) {
                 if (data.types.length > 1) {
                   document.querySelector("#types > p:last-child").innerText =
                     data.types[1].type.name.toUpperCase();
+                    document.getElementById('types').style.gridTemplateColumns = '1fr 1fr';
+                } else {
+                  document.getElementById('types').style.gridTemplateColumns = '1fr';
                 }
               }
 
@@ -71,6 +74,11 @@ function getPokemon(input) {
                 document.querySelectorAll("div p").forEach((p) => {
                   if (stat.stat.name == p.id) {
                     p.innerText = stat.base_stat;
+                  }
+                });
+                document.querySelectorAll(".value-bar").forEach(bar => {
+                  if (stat.stat.name == bar.dataset.label) {
+                    bar.style.width = stat.base_stat / 2 + "%";
                   }
                 });
               }
