@@ -14,7 +14,7 @@
   </head>
   <body>
     <div id="search-area">
-      <input type="text" id="search-input" required placeholder="search..."/>
+      <input type="text" id="search-input" required placeholder="search..." />
 
       <button id="search-button" type="submit">search</button>
     </div>
@@ -26,32 +26,50 @@
       </div>
 
       <div id="visual">
-        <p id="types" class="poppins-bold"></p>
         <img id="sprite" src="" alt="pokemon sprite" />
+        <p id="types" class="poppins-bold"></p>
       </div>
 
       <div id="attributes">
         <div>
-        <p id="weight" class="poppins-light"></p>
-        <label for="weight" class="poppins-light">WEIGHT (kg)</label>
-      </div>
-      <div>
-        <p id="height" class="poppins-light"></p>
-        <label for="height" class="poppins-light">HEIGHT (m)</label>
-      </div>
-      <div>
-        <p id="moves" class="poppins-light"></p>
-        <label for="moves" class="poppins-light">MOVES</label>
-      </div>
+          <p id="weight" class="poppins-light"></p>
+          <label for="weight" class="poppins-light">WEIGHT (kg)</label>
+        </div>
+        <div class="vr"></div>
+        <div>
+          <p id="height" class="poppins-light"></p>
+          <label for="height" class="poppins-light">HEIGHT (m)</label>
+        </div>
+        <div class="vr"></div>
+        <div>
+          <p id="moves" class="poppins-light"></p>
+          <label for="moves" class="poppins-light">MOVES</label>
+        </div>
       </div>
 
       <div id="stats">
+        <div id="labels">
+        <label for="hp">HP</label>
+        <label for="attack">ATK</label>
+        <label for="defense">DEF</label>
+        <label for="special-attack">SATK</label>
+        <label for="special-defense">SDEF</label>
+        <label for="speed">SPD</label>
+      </div>
+
+        <div class="vr"></div>
+
+        <div id="values">
         <p id="hp"></p>
         <p id="attack"></p>
         <p id="defense"></p>
         <p id="special-attack"></p>
         <p id="special-defense"></p>
         <p id="speed"></p>
+      </div>
+
+        <div></div>
+
       </div>
     </div>
 
