@@ -234,7 +234,10 @@ h3 {
 
 @media screen and (max-width: 500px) {
   body {
-    height: 90%;
-    width: 375px;
+    width: calc(100% - 50px);
+  }
+
+  #poke-info {
+    height: 80%;
   }
 }
