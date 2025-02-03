@@ -97,6 +97,7 @@ function getPokemon(input) {
                 document.querySelectorAll(".value-bar").forEach(bar => {
                   if (stat.stat.name == bar.dataset.label) {
                     bar.style.width = stat.base_stat / 2 + "%";
+                    bar.style.backgroundColor = document.querySelector("#types > p:first-child").style.backgroundColor;
                   }
                 });
               }
@@ -121,7 +122,6 @@ function getPokemon(input) {
                 let secondMove = document.querySelector("#moves > p:last-child");
                 secondMove.classList.add('poppins-light');
                 secondMove.innerText = data.moves[1].name.replace('-', ' ');
-                //moves.textContent += data.moves[0].name.replace('-', ' ') + '\n' + data.moves[1].name.replace('-', ' ');
               })
             });
 

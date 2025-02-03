@@ -100,7 +100,7 @@ h3 {
 
   img {
     display: none;
-    width: 200px;
+    width: 160px;
     margin: auto;
   }
 }
@@ -211,7 +211,6 @@ h3 {
 }
 
 .value-bar {
-  background-color: black;
   position: absolute;
   left: 0;
   height: 5px;
