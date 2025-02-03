@@ -15,11 +15,11 @@ html {
 }
 
 body {
-  height: 90%;
+  height: 100%;
   width: 450px;
   display: grid;
   grid-template-rows: 1fr 8fr;
-  gap: 10px;
+  padding: 20px;
 }
 
 #search-area {
@@ -45,12 +45,12 @@ body {
     cursor: pointer;
     border-radius: 50px;
     border: none;
-    background-color: crimson;
+    background-color: #DC0A2D;
     color: white;
   }
 
   button:hover {
-    background-color: rgba(113, 10, 31, 0.5);
+    background-color: rgba(220, 10, 45, 0.5);
   }
 }
 
@@ -112,7 +112,6 @@ h3 {
   margin: auto;
 
   p {
-    background: black;
     border-radius: 20px;
     padding: 5px;
     width: 70px;
@@ -134,9 +133,7 @@ h3 {
     grid-template-rows: 2fr 1fr;
   }
 
-  p {
-    font-size: 1rem;
-  }
+  
 
   label {
     font-size: 0.6rem;
@@ -173,6 +170,14 @@ h3 {
     font-style: normal;
     font-size: 0.75rem;
   }
+}
+
+#moves {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-size: 0.6rem;
+  line-height: 1.15;
 }
 
 #labels {
@@ -234,7 +239,7 @@ h3 {
 
 @media screen and (max-width: 500px) {
   body {
-    width: calc(100% - 50px);
+    width: calc(100% - 30px);
   }
 
   #poke-info {

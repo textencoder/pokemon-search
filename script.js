@@ -14,10 +14,26 @@ const specialAttack = document.getElementById("special-attack");
 const specialDefense = document.getElementById("special-defense");
 const speed = document.getElementById("speed");
 
-//console scripting fun
-// document.querySelectorAll('div p').forEach(p => {
-//     console.log(`const ${p.id} = document.getElementById('${p.id}')`);
-// })
+const colorObj = {
+  'bug': '#a7b723',
+  'dark': '#75574c',
+  'dragon': '#7037ff',
+  'electric': '#f9cf30',
+  'fairy': '#e69eac',
+  'fighting': '#c12239',
+  'fire': '#f57d31',
+  'flying': '#a891ec',
+  'ghost': '#70559b',
+  'normal': '#aaa67f',
+  'grass': '#74cb48',
+  'ground': '#dec16b',
+  'ice': '#9ad6df',
+  'poison': '#a43e9e',
+  'psychic': '#fb5584',
+  'rock': '#b69e31',
+  'steel': 'b7b9d0',
+  'water': '#6493eb'
+}
 
 function getPokemon(input) {
   //initial api fetch
@@ -58,12 +74,14 @@ function getPokemon(input) {
               //add new types
               for (let i = 0; i < data.types.length; i++) {
                 types.appendChild(document.createElement("p"));
-                document.querySelector("#types > p:first-child").innerText =
-                  data.types[0].type.name.toUpperCase();
+                let firstType = document.querySelector("#types > p:first-child");
+                firstType.innerText = data.types[0].type.name.toUpperCase();
+                firstType.style.backgroundColor = colorObj[data.types[0].type.name];
                 if (data.types.length > 1) {
-                  document.querySelector("#types > p:last-child").innerText =
-                    data.types[1].type.name.toUpperCase();
-                    document.getElementById('types').style.gridTemplateColumns = '1fr 1fr';
+                let secondType = document.querySelector("#types > p:last-child");
+                secondType.innerText = data.types[1].type.name.toUpperCase();
+                secondType.style.backgroundColor = colorObj[data.types[1].type.name];
+                document.getElementById('types').style.gridTemplateColumns = '1fr 1fr';
                 } else {
                   document.getElementById('types').style.gridTemplateColumns = '1fr';
                 }
@@ -85,6 +103,26 @@ function getPokemon(input) {
               //set sprite img src
               document.querySelector("img").src = data.sprites["front_default"];
               document.querySelector("img").style.display = "block";
+
+              fetch(data.types[0].type.url)
+              .then(response => {
+                if (!response.ok) {
+                  throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json()
+              })
+              .then(data => {
+                moves.innerHTML = '';
+                moves.appendChild(document.createElement("p"));
+                let firstMove = document.querySelector("#moves > p:first-child");
+                firstMove.classList.add('poppins-light');
+                firstMove.innerText = data.moves[0].name.replace('-', ' ');
+                moves.appendChild(document.createElement("p"));
+                let secondMove = document.querySelector("#moves > p:last-child");
+                secondMove.classList.add('poppins-light');
+                secondMove.innerText = data.moves[1].name.replace('-', ' ');
+                //moves.textContent += data.moves[0].name.replace('-', ' ') + '\n' + data.moves[1].name.replace('-', ' ');
+              })
             });
 
             break;
