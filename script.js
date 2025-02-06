@@ -31,7 +31,7 @@ const colorObj = {
   'poison': '#a43e9e',
   'psychic': '#fb5584',
   'rock': '#b69e31',
-  'steel': 'b7b9d0',
+  'steel': '#b7b9d0',
   'water': '#6493eb'
 }
 
